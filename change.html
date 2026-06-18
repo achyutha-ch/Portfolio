@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Toggle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        #emojiBtn {
+            font-size: 100px;
+            padding: 20px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            background: white;
+        }
+
+        #emojiBtn:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <button id="emojiBtn">❤️</button>
+
+    <script>
+        const btn = document.getElementById("emojiBtn");
+        let liked = true;
+
+        btn.addEventListener("click", () => {
+            if (liked) {
+                btn.textContent = "💔";
+            } else {
+                btn.textContent = "❤️";
+            }
+
+            liked = !liked;
+        });
+    </script>
+
+</body>
+</html>

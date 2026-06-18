@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <title>Todo Application</title>
+</head>
+
+<body class="bg-gradient-to-br from-purple-200 via-pink-100 to-blue-200 min-h-screen">
+
+    <div class="max-w-7xl mx-auto p-6">
+
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 p-6 rounded-3xl shadow-xl mb-6">
+            <h1 class="text-4xl font-bold text-center text-white">
+                <i class="fa-solid fa-list-check"></i>
+                Todo Application
+            </h1>
+
+            <p class="text-center text-white mt-2">
+                Organize your day efficiently 🚀
+            </p>
+        </div>
+
+        <!-- Form -->
+        <div class="bg-white rounded-3xl shadow-xl p-6 mb-6">
+
+            <div class="flex flex-col md:flex-row gap-4">
+
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="Enter Task"
+                    class="flex-1 p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-4 focus:ring-purple-300">
+
+                <input
+                    type="date"
+                    id="dateInput"
+                    class="p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-4 focus:ring-pink-300">
+
+                <button
+                    onclick="addTask()"
+                    class="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-3 rounded-xl font-bold hover:scale-105 duration-300 shadow-lg">
+
+                    <i class="fa-solid fa-plus"></i>
+                    Add Task
+                </button>
+
+            </div>
+        </div>
+
+        <!-- Task Sections -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <!-- Completed -->
+            <div class="bg-gradient-to-br from-green-100 to-green-300 rounded-3xl p-5 shadow-xl">
+
+                <div class="flex justify-between items-center mb-4 border-b pb-2">
+                    <h2 class="text-xl font-bold text-green-800">
+                        <i class="fa-solid fa-circle-check"></i>
+                        Completed
+                    </h2>
+
+                    <span id="completedCount"
+                        class="bg-green-600 text-white px-3 py-1 rounded-full">
+                        0
+                    </span>
+                </div>
+
+                <div id="completedTasks">
+                    <p class="text-gray-600 text-center">
+                        No completed tasks yet
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Today's Tasks -->
+            <div class="bg-gradient-to-br from-blue-100 to-cyan-300 rounded-3xl p-5 shadow-xl">
+
+                <div class="flex justify-between items-center mb-4 border-b pb-2">
+                    <h2 class="text-xl font-bold text-blue-800">
+                        <i class="fa-solid fa-calendar-day"></i>
+                        Today's Tasks
+                    </h2>
+
+                    <span id="todayCount"
+                        class="bg-blue-600 text-white px-3 py-1 rounded-full">
+                        0
+                    </span>
+                </div>
+
+                <div id="todaysTasks">
+                    <p class="text-gray-600 text-center">
+                        No tasks for today
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Upcoming -->
+            <div class="bg-gradient-to-br from-yellow-100 to-orange-300 rounded-3xl p-5 shadow-xl">
+
+                <div class="flex justify-between items-center mb-4 border-b pb-2">
+                    <h2 class="text-xl font-bold text-orange-800">
+                        <i class="fa-solid fa-hourglass-half"></i>
+                        Upcoming
+                    </h2>
+
+                    <span id="upcomingCount"
+                        class="bg-orange-600 text-white px-3 py-1 rounded-full">
+                        0
+                    </span>
+                </div>
+
+                <div id="upcomingTasks">
+                    <p class="text-gray-600 text-center">
+                        No upcoming tasks
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Statistics -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+
+            <div class="bg-purple-500 text-white p-5 rounded-3xl shadow-xl text-center">
+                <h3 class="font-semibold">Total Tasks</h3>
+                <p id="totalTasks" class="text-3xl font-bold">0</p>
+            </div>
+
+            <div class="bg-green-500 text-white p-5 rounded-3xl shadow-xl text-center">
+                <h3 class="font-semibold">Completed</h3>
+                <p id="completedStats" class="text-3xl font-bold">0</p>
+            </div>
+
+            <div class="bg-red-500 text-white p-5 rounded-3xl shadow-xl text-center">
+                <h3 class="font-semibold">Pending</h3>
+                <p id="pendingStats" class="text-3xl font-bold">0</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

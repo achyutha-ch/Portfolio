@@ -1,0 +1,180 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#667eea,#764ba2,#f093fb);
+}
+
+.full-page{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+.form-container{
+    width:100%;
+    max-width:1000px;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(15px);
+    border-radius:25px;
+    padding:30px;
+    box-shadow:0 8px 32px rgba(0,0,0,0.2);
+    border:1px solid rgba(255,255,255,0.2);
+}
+
+.row{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.heading-row{
+    margin-bottom:25px;
+}
+
+.heading-row h1{
+    color:white;
+    font-size:2.5rem;
+    text-align:center;
+    text-shadow:2px 2px 5px rgba(0,0,0,0.3);
+}
+
+.input-row{
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.inputfield{
+    width:280px;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    outline:none;
+    font-size:15px;
+    background:white;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.inputfield:focus{
+    transform:translateY(-2px);
+    box-shadow:0 0 15px rgba(255,255,255,0.8);
+}
+
+.form-button{
+    padding:14px 30px;
+    border:none;
+    border-radius:12px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    background:linear-gradient(135deg,#00c853,#00e676);
+    color:white;
+    transition:0.3s;
+}
+
+.form-button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 6px 15px rgba(0,200,83,0.4);
+}
+
+#contactsContainer{
+    margin-top:30px;
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+    gap:20px;
+}
+
+/* Contact Card */
+.contact-card{
+    background:white;
+    border-radius:20px;
+    padding:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    transition:0.3s;
+    position:relative;
+    overflow:hidden;
+}
+
+.contact-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 30px rgba(0,0,0,0.15);
+}
+
+.contact-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:6px;
+    background:linear-gradient(90deg,#667eea,#764ba2,#f093fb);
+}
+
+.contact-name{
+    font-size:20px;
+    font-weight:bold;
+    color:#333;
+    margin-bottom:10px;
+}
+
+.contact-phone{
+    color:#00c853;
+    margin-bottom:8px;
+}
+
+.contact-email{
+    color:#4a6cf7;
+}
+
+.card-buttons{
+    display:flex;
+    gap:10px;
+    margin-top:15px;
+}
+
+.edit-btn{
+    background:#ffc107;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.delete-btn{
+    background:#ff5252;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.edit-btn:hover,
+.delete-btn:hover{
+    opacity:0.85;
+}
+
+@media(max-width:768px){
+
+    .heading-row h1{
+        font-size:2rem;
+    }
+
+    .inputfield{
+        width:100%;
+    }
+
+    .input-row{
+        flex-direction:column;
+    }
+}
